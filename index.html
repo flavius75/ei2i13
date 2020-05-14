@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Socket.io basic example</title>
+</head>
+
+<body>
+    <h1>This is a page connected with a web socket</h1>
+    <p><a href="/" target="_blank">Open the page in a new tab</a> to add a new connection.</p>
+    <p>Look at the console log of your command line to see the messages.</p>
+    <!-- include the socket.io.js file, which does not "physically" exists, but is provided directly by the server -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        //Start the socket connection
+        var socket = io();
+    </script>
+</body>
+
+</html>
