@@ -15,6 +15,10 @@
     <script>
         //Start the socket connection
         var socket = io();
+
+        socket.on('distribute', function(data){
+            console.log(data);
+        })
     </script>
 </body>
 
