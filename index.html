@@ -1,16 +1,171 @@
 <!doctype html>
-<html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Socket.io basic example</title>
-</head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<body>
-    <h1>This is a page connected with a web socket</h1>
-    <p><a href="/" target="_blank">Open the page in a new tab</a> to add a new connection.</p>
-    <p>Look at the console log of your command line to see the messages.</p>
-    <!-- include the socket.io.js file, which does not "physically" exists, but is provided directly by the server -->
+    <title>EI2I 13</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+          Ei2i 13
+        </a>
+      </nav>
+
+    <div class="container-fluid mt-4">
+
+        <div class="row">
+
+            <div class="col-7">
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Apple</th>
+                        <th scope="col">Compass</th>
+                        <th scope="col">Drill</th>
+                        <th scope="col">Charger</th>
+                        <th scope="col">Netflix</th>
+                        <th scope="col">Cap</th>
+                        <th scope="col">Watch</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Player 1</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Player 2</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Player 3</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Player 4</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+
+
+        <div class="row" style="display:flex; flex-direction: row;">
+            <div class="col-3">
+                <table class="table table-bordered table-sm mt-3">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Objects</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Flavius</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Joao</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Manu</th>
+                        <td></td>
+
+                      </tr>
+                      <tr>
+                        <th scope="row">Victor</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Jad</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Yassine</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Piotr</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Bolor</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">William</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Mama</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Aimerick</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Kadija</th>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                
+
+            </div>
+
+            <div class="col-1"></div>
+            <div class="col-8 pt-4 pb-4" style="display:flex; flex-direction: row; justify-content:space-evenly" >
+              <img src="https://i.picsum.photos/id/730/300/200.jpg" alt="">
+            
+              <img src="https://i.picsum.photos/id/730/300/200.jpg" alt="">
+            
+              <img src="https://i.picsum.photos/id/730/300/200.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
         //Start the socket connection
@@ -20,6 +175,6 @@
             console.log(data);
         })
     </script>
-</body>
-
+  </body>
 </html>
+
