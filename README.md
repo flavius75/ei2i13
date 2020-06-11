@@ -16,4 +16,4 @@ Installation
 * Ouvrir le terminal et naviguer jusqu'au dossier du jeu
 * Executer : `npm install` 
 * Lancer le serveur : `node app.js`
-
+* Ouvrir son navigateur sur : `http://localhost:3000`

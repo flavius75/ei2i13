@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ei2i 13</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <ul class="pages">
+    <li class="chat page">
+      <div class="container-fluid mt-4">
+
+        <div class="row">
+
+            <div class="col-7">
+                <table class="table table-bordered table-sm">
+                    <thead>
+                      <tr>
+                        <th scope="col"></th>
+                        <th scope="col"><img src="icons/apple.png" alt=""> (5) </th>
+                        <th scope="col"> <img src="icons/compass.png" alt=""> (4)</th>
+                        <th scope="col"> <img src="icons/drill.png" alt=""> (3) </th>
+                        <th scope="col"> <img src="icons/charger.png" alt=""> (3) </th>
+                        <th scope="col"> <img src="icons/netflix.png" alt=""> (5) </th>
+                        <th scope="col"> <img src="icons/cap.png" alt=""> (3) </th>
+                        <th scope="col"> <img src="icons/watch.png" alt=""> (5) </th>
+                        <th scope="col"> <img src="icons/glasses.png" alt=""> (5) </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th class="play1" scope="row"></th>
+                        <td class='00'></td>
+                        <td class='01'></td>
+                        <td class='02'></td>
+                        <td class='03'></td>
+                        <td class='04'></td>
+                        <td class='05'></td>
+                        <td class='06'></td>
+                        <td class='07'></td>
+                      </tr>
+                      <tr>
+                        <th class="play2" scope="row"></th>
+                        <td class='10 '></td>
+                        <td class='11 '></td>
+                        <td class='12 '></td>
+                        <td class='13 '></td>
+                        <td class='14 '></td>
+                        <td class='15 '></td>
+                        <td class='16 '></td>
+                        <td class='17 '></td>
+                      </tr>
+                      <tr>
+                        <th class="play3" scope="row"></th>
+                        <td class='20 '></td>
+                        <td class='21 '></td>
+                        <td class='22 '></td>
+                        <td class='23 '></td>
+                        <td class='24 '></td>
+                        <td class='25 '></td>
+                        <td class='26 '></td>
+                        <td class='27 '></td>
+                      </tr>
+                      <tr>
+                        <th class="play4" scope="row"></th>
+                        <td class='30 '></td>
+                        <td class='31 '></td>
+                        <td class='32 '></td>
+                        <td class='33 '></td>
+                        <td class='34 '></td>
+                        <td class='35 '></td>
+                        <td class='36 '></td>
+                        <td class='37 '></td>
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+            </div>
+
+            <div class="col-2">
+
+                <select id="destination" class="form-control" disabled>
+                  <option selected>Je demande à ...</option>
+                  <option class="play1" value="0"></option>
+                  <option class="play2" value="1"></option>
+                  <option class="play3" value="2"></option>
+                  <option class="play4" value="3"></option>
+                  <option value="4">Tout le monde</option>
+                </select>
+            
+
+              <select id="q-object" class="form-control mt-4" disabled>
+                <option selected>Si il a ...</option>
+                <option value="apple">Un produit Apple</option>
+                <option value="compass">Un compas</option>
+                <option value="drill">Une visseuse</option>
+                <option value="charger">Un chargeur</option>
+                <option value="netflix">Un compte Netflix</option>
+                <option value="cap">Une casquette</option>
+                <option value="watch">Une montre</option>
+                <option value="glasses">Des lunettes</option>
+              </select>
+
+              <button type="button" class="btn btn-outline-dark mt-5 question" disabled>Demander</button>
+            </div>
+
+            <div class="col-1" style="text-align: center;">OU</div>
+
+            <div class="col-2">
+              <select id="thief" class="form-control" disabled>
+                <option selected>J'accuse ...</option>
+                <option value="Flavius">Flav</option>
+                <option value="Joao" >Joao</option>
+                <option value="Adrien" >Adriun</option>
+                <option value="Victor" >Victor</option>
+                <option value="Jad" >Jad</option>
+                <option value="Yassine" >Yassine</option>
+                <option value="Piotr" >Potr</option>
+                <option value="Bolor" >Bolor</option>
+                <option value="William" >Bibou</option>
+                <option value="Mama" >Mama</option>
+                <option value="Aymerick" >Aymerick</option>
+                <option value="Khadija" >Karaba</option>
+                <option value="Cherif" >Thomas</option>
+              </select>
+
+              <button type="button" class="btn btn-outline-dark mt-5 accuse" disabled>Accuser</button>
+
+            </div>
+
+        </div>
+
+
+        <div class="row" style="display:flex; flex-direction: row;">
+            <div class="col-3">
+                <table class="table table-bordered table-sm mt-3 legend">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Objects</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="legend-row">
+                        <th scope="row">Flavius</th>
+                        <td><img src="icons/apple.png" alt=""><img src="icons/watch.png" alt=""><img src="icons/compass.png" alt=""></td>
+                      </tr>
+                      <tr class="legend-row">
+                        <th scope="row">Joao</th>
+                        <td><img src="icons/watch.png" alt=""><img src="icons/drill.png" alt=""></td>
+                      </tr>
+                      <tr class="legend-row">
+                        <th scope="row">Adrien</th>
+                        <td><img src="icons/watch.png" alt=""><img src="icons/charger.png" alt=""></td>
+
+                      </tr>
+                      <tr class="legend-row">
+                        <th scope="row">Victor</th>
+                        <td><img src="icons/apple.png" alt=""><img src="icons/netflix.png" alt=""><img src="icons/glasses.png" alt=""></td>
+                      </tr>
+                      <tr class="legend-row">
+                        <th scope="row">Jad</th>
+                        <td><img src="icons/apple.png" alt=""><img src="icons/watch.png" alt=""><img src="icons/charger.png" alt=""></td>
+                      </tr>
+                      <tr class="legend-row">
+                        <th scope="row">Yassine</th>
+                        <td><img src="icons/apple.png" alt=""><img src="icons/glasses.png" alt=""><img src="icons/cap.png" alt=""></td>
+                      </tr>
+                      <tr class="legend-row">
+                        <th scope="row">Potr</th>
+                        <td><img src="icons/glasses.png" alt=""><img src="icons/drill.png" alt=""><img src="icons/compass.png" alt=""></td>
+                      </tr>
+                      <tr class="legend-row">
+                        <th scope="row">Bolor</th>
+                        <td><img src="icons/glasses.png" alt=""><img src="icons/charger.png" alt=""><img src="icons/compass.png" alt=""></td>
+                      </tr>
+                      <tr class="legend-row">
+                        <th scope="row">William</th>
+                        <td><img src="icons/watch.png" alt=""><img src="icons/cap.png" alt=""><img src="icons/drill.png" alt=""></td>
+                      </tr>
+                      <tr class="legend-row">
+                        <th scope="row">Mama</th>
+                        <td><img src="icons/apple.png" alt=""><img src="icons/netflix.png" alt=""></td>
+                      </tr>
+                      <tr class="legend-row">
+                        <th scope="row">Aymerick</th>
+                        <td><img src="icons/netflix.png" alt=""><img src="icons/compass.png" alt=""></td>
+                      </tr>
+                      <tr class="legend-row">
+                        <th scope="row">Kadija</th>
+                        <td><img src="icons/cap.png" alt=""><img src="icons/netflix.png" alt=""></td>
+                      </tr>
+                      <tr class="legend-row">
+                        <th scope="row">Cherif</th>
+                        <td><img src="icons/netflix.png" alt=""><img src="icons/glasses.png" alt=""></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+              
+            </div>
+
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Verdict</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  
+                </div>
+              </div>
+            </div>
+            </div>
+
+
+
+            <div class="col-1"></div>
+            <div class="col-8 pt-4 pb-4" style="display:flex; flex-direction: row; justify-content:space-between" >
+              <img id="card1" src="https://i.picsum.photos/id/730/300/200.jpg" width="300px" height="400" alt="">
+            
+              <img id="card2" src="https://i.picsum.photos/id/730/300/200.jpg" width="300px" height="400" alt="">
+            
+              <img id="card3" src="https://i.picsum.photos/id/730/300/200.jpg" width="300px" height="400" alt="">
+            </div>
+        </div>
+    </div>
+    </li>
+    <li class="login page">
+      <div class="form">
+        <h3 class="title">Quel est ton surnom?</h3>
+        <input class="usernameInput" type="text" maxlength="14" />
+      </div>
+    </li>
+  </ul>
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="/main.js"></script>
+</body>
+</html>
