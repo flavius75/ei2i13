@@ -21,8 +21,7 @@ html, input {
 }
 
 html {    
-  background: url('background.png') no-repeat center fixed;     
-  background-size: cover;
+ 
 }
 
 html, body {
@@ -54,7 +53,9 @@ ul {
 /* Login Page */
 
 .login.page {
-  background-color: #000;
+  /* background-color: #000; */
+  background: url('background.png') no-repeat center fixed;     
+  background-size: cover;
 }
 
 .login.page .form {
@@ -91,12 +92,34 @@ ul {
   font-weight: 100;
 }
 
+/* Waiting page */
+
+.waiting.page {
+  background: url('story.png') no-repeat center top/25% fixed;     
+  background-size: cover;
+  
+}
+
+.waiting.page .title {
+  font-size: 200%;
+  top: 50%;
+}
+
 /* Chat page */
 
 .chat.page {
   display: none;
 }
 
+/* Block page */
+.block.page {
+  display: none;
+}
+
+/* Waiting page */
+.waiting.page {
+  display: none;
+}
 /* Font */
 
 .messages {

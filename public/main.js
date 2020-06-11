@@ -12,6 +12,8 @@ $(function() {
 
   var $loginPage = $('.login.page'); // The login page
   var $chatPage = $('.chat.page'); // The chatroom page
+  var $blockPage = $('.block.page');
+  var $waitingPage = $('.waiting.page');
 
   // Prompt for setting a username
   var username;
@@ -136,7 +138,7 @@ $(function() {
     // If the username is valid
     if (username) {
       $loginPage.fadeOut();
-      $chatPage.show();
+      $waitingPage.show();
       $loginPage.off('click');
       $currentInput = $inputMessage.focus();
 
@@ -144,6 +146,11 @@ $(function() {
       socket.emit('add user', username);
     }
   }
+
+  socket.on('start game', () => {
+    $waitingPage.fadeOut();
+    $chatPage.show();
+  });
 
   // Sends a chat message
   const sendMessage = () => {
@@ -288,14 +295,22 @@ $(function() {
     addParticipantsMessage(data);
   });
 
+
+  socket.on('block user', (data) =>{
+    if(data){
+
+      $chatPage.fadeOut();
+      $waitingPage.fadeOut();
+      $blockPage.show();
+    }
+  })
+
   //Show Cards distributed
   socket.on('distribute', (data) => {
-    console.log(data);
     showPlayers(data.names);
     showCards(data.cards);
     let objects = getOwnObjects(data.cards);
     rang = getRang(data.names);
-    console.log('rang = '+rang);
     updateTable(rang, objects, 'horizontal');
 
   });
@@ -306,14 +321,6 @@ $(function() {
       var answer = 0;
       
       socket.emit('question', [destination, object]);
-
-      console.log(destination);
-      console.log(object);
-
-
-    delete destination;
-    delete object;
-    delete answer;
 
   });
 
@@ -327,16 +334,21 @@ $(function() {
   });
 
   socket.on('verdict', (response) => {
-    console.log(response);
-    $('.modal-body').text(response);
-    $('#exampleModal').modal('toggle');
+    var sentence;
+    if (response == 'looser'){
+       sentence = 'Vous avez PERDU.';
+    }else{
+      sentence = "Vous avez GAGNE !";
+    }
+
+    $('.modal-body').text(sentence);
+    $('#exampleModal').modal('show');
   });
 
 
 
   socket.on('answer', (data) => {
     answer = data;
-    console.log('answer = '+answer);
     if (answer[0] == 4){
 
       updateTable(answer[1], answer[2], 'vertical');
@@ -349,7 +361,6 @@ $(function() {
 });
 
   socket.on('turn', (currentTurn)=> {
-    console.log('turn '+currentTurn);
 
     if (currentTurn){
       $('#destination').removeAttr('disabled');
@@ -364,7 +375,7 @@ $(function() {
       $('#q-object').attr('disabled', true);
       $('.question').attr('disabled', true);
       $('#thief').attr('disabled', true);
-      $('.accuse').removeAttr('disabled');
+      $('.accuse').attr('disabled', true);
 
     }
 
@@ -374,37 +385,6 @@ $(function() {
       $(this).toggleClass('table-active');
   })
 
-
-  // Whenever the server emits 'user joined', log it in the chat body
-  // socket.on('user joined', (data) => {
-  //   log(data.username + ' joined');
-  //   addParticipantsMessage(data);
-  // });
-
-  // Whenever the server emits 'user left', log it in the chat body
-  // socket.on('user left', (data) => {
-  //   log(data.username + ' left');
-  //   addParticipantsMessage(data);
-  //   removeChatTyping(data);
-  // });
-
- 
-
-  // Whenever the server emits 'stop typing', kill the typing message
-  // socket.on('stop typing', (data) => {
-  //   removeChatTyping(data);
-  // });
-
-  // socket.on('disconnect', () => {
-  //   log('you have been disconnected');
-  // });
-
-  // socket.on('reconnect', () => {
-  //   log('you have been reconnected');
-  //   if (username) {
-  //     socket.emit('add user', username);
-  //   }
-  // });
 
   
 

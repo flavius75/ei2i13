@@ -82,7 +82,7 @@
             <div class="col-2">
 
                 <select id="destination" class="form-control" disabled>
-                  <option selected>Je demande à ...</option>
+                  <option selected value='none'>Je demande à ...</option>
                   <option class="play1" value="0"></option>
                   <option class="play2" value="1"></option>
                   <option class="play3" value="2"></option>
@@ -111,19 +111,19 @@
             <div class="col-2">
               <select id="thief" class="form-control" disabled>
                 <option selected>J'accuse ...</option>
-                <option value="Flavius">Flav</option>
-                <option value="Joao" >Joao</option>
+                <option value="Flavius">Flav-Gangsta</option>
+                <option value="Joao" >Joaoaoaoao</option>
                 <option value="Adrien" >Adriun</option>
-                <option value="Victor" >Victor</option>
-                <option value="Jad" >Jad</option>
-                <option value="Yassine" >Yassine</option>
+                <option value="Victor" >Creviette</option>
+                <option value="Jad" >Jad ^^</option>
+                <option value="Yassine" >Porte-Yassein</option>
                 <option value="Piotr" >Potr</option>
-                <option value="Bolor" >Bolor</option>
-                <option value="William" >Bibou</option>
-                <option value="Mama" >Mama</option>
-                <option value="Aymerick" >Aymerick</option>
-                <option value="Khadija" >Karaba</option>
-                <option value="Cherif" >Thomas</option>
+                <option value="Bolor" >Bolor Chauve-souris grasse</option>
+                <option value="Wiliam" >Bibou</option>
+                <option value="Mama" >Mama La Star</option>
+                <option value="Aymerick" >Brebis</option>
+                <option value="Khadija" >Sorcière Karaba</option>
+                <option value="Cherif" >Thomas Ngijol</option>
               </select>
 
               <button type="button" class="btn btn-outline-dark mt-5 accuse" disabled>Accuser</button>
@@ -144,28 +144,28 @@
                     </thead>
                     <tbody>
                       <tr class="legend-row">
-                        <th scope="row">Flavius</th>
+                        <th scope="row">Flav-Gangsta</th>
                         <td><img src="icons/apple.png" alt=""><img src="icons/watch.png" alt=""><img src="icons/compass.png" alt=""></td>
                       </tr>
                       <tr class="legend-row">
-                        <th scope="row">Joao</th>
+                        <th scope="row">Joaoaoaoao</th>
                         <td><img src="icons/watch.png" alt=""><img src="icons/drill.png" alt=""></td>
                       </tr>
                       <tr class="legend-row">
-                        <th scope="row">Adrien</th>
+                        <th scope="row">Adriun</th>
                         <td><img src="icons/watch.png" alt=""><img src="icons/charger.png" alt=""></td>
 
                       </tr>
                       <tr class="legend-row">
-                        <th scope="row">Victor</th>
+                        <th scope="row">Creviette</th>
                         <td><img src="icons/apple.png" alt=""><img src="icons/netflix.png" alt=""><img src="icons/glasses.png" alt=""></td>
                       </tr>
                       <tr class="legend-row">
-                        <th scope="row">Jad</th>
+                        <th scope="row">Jad ^^</th>
                         <td><img src="icons/apple.png" alt=""><img src="icons/watch.png" alt=""><img src="icons/charger.png" alt=""></td>
                       </tr>
                       <tr class="legend-row">
-                        <th scope="row">Yassine</th>
+                        <th scope="row">Porte-Yassein</th>
                         <td><img src="icons/apple.png" alt=""><img src="icons/glasses.png" alt=""><img src="icons/cap.png" alt=""></td>
                       </tr>
                       <tr class="legend-row">
@@ -173,27 +173,27 @@
                         <td><img src="icons/glasses.png" alt=""><img src="icons/drill.png" alt=""><img src="icons/compass.png" alt=""></td>
                       </tr>
                       <tr class="legend-row">
-                        <th scope="row">Bolor</th>
+                        <th scope="row">Bolor Chauve-souris grasse</th>
                         <td><img src="icons/glasses.png" alt=""><img src="icons/charger.png" alt=""><img src="icons/compass.png" alt=""></td>
                       </tr>
                       <tr class="legend-row">
-                        <th scope="row">William</th>
+                        <th scope="row">Bibou</th>
                         <td><img src="icons/watch.png" alt=""><img src="icons/cap.png" alt=""><img src="icons/drill.png" alt=""></td>
                       </tr>
                       <tr class="legend-row">
-                        <th scope="row">Mama</th>
+                        <th scope="row">Mama La Star</th>
                         <td><img src="icons/apple.png" alt=""><img src="icons/netflix.png" alt=""></td>
                       </tr>
                       <tr class="legend-row">
-                        <th scope="row">Aymerick</th>
+                        <th scope="row">Brebis</th>
                         <td><img src="icons/netflix.png" alt=""><img src="icons/compass.png" alt=""></td>
                       </tr>
                       <tr class="legend-row">
-                        <th scope="row">Kadija</th>
+                        <th scope="row">Sorcière Karaba</th>
                         <td><img src="icons/cap.png" alt=""><img src="icons/netflix.png" alt=""></td>
                       </tr>
                       <tr class="legend-row">
-                        <th scope="row">Cherif</th>
+                        <th scope="row">Thomas Ngijol</th>
                         <td><img src="icons/netflix.png" alt=""><img src="icons/glasses.png" alt=""></td>
                       </tr>
                     </tbody>
@@ -205,14 +205,12 @@
 
 
             <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="exampleModal"  data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalLabel">Verdict</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+                 
                 </div>
                 <div class="modal-body">
                   ...
@@ -225,14 +223,59 @@
             </div>
 
 
+            <div class="modal fade" id="reglesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Présentation du jeu EI2I 13</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>
+                      EI2I 13 est un jeu d'enquête et de déduction basé sur l'univers de la classe EI2I <br>
+                      Le principe de ce jeu est très simple: Il faut trouver le voleur du projet qui se trouve dans la classe, pour cela il faut interroger les autres jouers pour découvrir le coupable.
+                    </p>
+                    <p>
+                      Nous disposons de treize cartes représentant des caricatures des éléves EI2I HF, dont un sera le coupable. Chaque carte est identifié par une photo et une série d'icones.
+                    </p>
+                      <p>
+                        Le principe est de tenter de déduire les personages que chaque jouer posséde dans le but de trouver la carte manquante, et ainsi trouver le coupable.
+                      </p>
+                      <p>
+                        <b>Actions dans le jeu</b><br>
+                        Les actions que chaque joueur peut effectuer pour trouver le coupable sont: <br>
+                        <ul>
+                          <li>• Demander à tous les joueurs si ils possedent au moins une carte avec un symbole précis. </li>
+                          <li>• Demander à un joueur précis combien de cartes avec un symbole précis il posséde. </li>
+                          <li>• Accuser quelqu'un.</li>
+                        </ul>
+                      </p>
+                      <p>
+                        <b> Fin de la partie</b><br>
+                        Celui qui trouve l'infâme voleur gagne la partie, mais attention à ne pas accuser quelqu'un à tord ou ce sera la fin du jeu pour toi.
+                        
+                      </p>
+                  </div>
+                  <div class="modal-footer">
+                  
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" >Fermer</button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-            <div class="col-1"></div>
+
+            <div class="col-1"><button type="button" data-toggle="modal" data-target="#reglesModal">Aide</button></div>
             <div class="col-8 pt-4 pb-4" style="display:flex; flex-direction: row; justify-content:space-between" >
               <img id="card1" src="https://i.picsum.photos/id/730/300/200.jpg" width="300px" height="400" alt="">
             
               <img id="card2" src="https://i.picsum.photos/id/730/300/200.jpg" width="300px" height="400" alt="">
             
               <img id="card3" src="https://i.picsum.photos/id/730/300/200.jpg" width="300px" height="400" alt="">
+            
+              
             </div>
         </div>
     </div>
@@ -242,6 +285,12 @@
         <h3 class="title">Quel est ton surnom?</h3>
         <input class="usernameInput" type="text" maxlength="14" />
       </div>
+    </li>
+    <li class="block page">
+      <h3 class="title">La partie a deja commencé, veuillez revenir plus tard</h3>
+    </li>
+    <li class="waiting page">
+      <h3 class="title"></h3>
     </li>
   </ul>
 

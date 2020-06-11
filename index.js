@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Cards 
 
 let cardsNames = ['Jad', 'Flavius', 'Victor', 'Joao', 'Yassine', 'Mama', 'Bolor', 'Wiliam', 'Piotr', 'Aymerick', 'Adrien', 'Khadija', 'Cherif'];
-let objects = ['apple', 'compas', 'drill', 'charger', 'netflix', 'cap', 'watch', 'glasses' ];
+let objects = ['apple', 'compass', 'drill', 'charger', 'netflix', 'cap', 'watch', 'glasses' ];
 let ext = ".png"
 class Card{
     constructor(name, photo, objects = []){
@@ -64,13 +64,19 @@ function distribute(collection, nameList, players){
   let i=0;
   shuffle(collection);
 
+  console.log('player1 = '+deck[0].name+' '+deck[1].name+' '+deck[2].name);
+  console.log('player2 = '+deck[3].name+' '+deck[4].name+' '+deck[5].name);
+  console.log('player3 = '+deck[6].name+' '+deck[7].name+' '+deck[8].name);
+  console.log('player4 = '+deck[9].name+' '+deck[10].name+' '+deck[11].name);
+  console.log('thief = '+deck[12].name);
+
   for(let player of players){
+
     player.emit('distribute', {
       cards : collection.slice(i, i+=3),
-      names : nameList
+      names : nameList,
     });
   }
-
 }
 
 function getRepFromPlayers(column) {
@@ -173,12 +179,23 @@ io.on('connection', (socket) => {
     // we store the username in the socket session for this client
     socket.username = username;
     ++numUsers;
+
+    if(numUsers > 4){
+      socket.emit('block user', true);
+      return;
+    }
+
     addedUser = true;
     socketList.push(socket);
     nameList.push(username);
 
     if (numUsers == 4){
+
+      io.emit('start game');
+
       distribute(deck, nameList, socketList);
+
+
 
       socketList[currentTurn].emit('turn', true);
       socketList[currentTurn].broadcast.emit('turn', false);
@@ -187,11 +204,19 @@ io.on('connection', (socket) => {
 
   });
 
-  function nextTurn() {
+  function nextTurn(lose) {
     
+
+    for(let i in socketList){
+      if (socketList[i].username == lose){
+        socketList.splice(i, 1);
+        currentTurn -=1;
+      }
+    }
+
     console.log('change player');
    
-      if(currentTurn == 3){
+      if(currentTurn == socketList.length-1){
         currentTurn = 0;
       }else{
         currentTurn +=1;
@@ -207,6 +232,8 @@ io.on('connection', (socket) => {
   socket.on('question', (data) =>{
     var rep;
     var target = 0;
+
+    console.log('data = '+data);
 
     if(data[0] == 4){
        rep = getRepFromPlayers(data[1]);
@@ -248,7 +275,6 @@ io.on('connection', (socket) => {
             case 'glasses':
               target = 7;
               break;  
-    
           }
 
     io.emit('answer', [data[0], target, rep]);
@@ -264,7 +290,9 @@ io.on('connection', (socket) => {
       socket.broadcast.emit('verdict', 'looser');
     }else{
       socket.emit('verdict', 'looser');
-      nextTurn();
+
+      console.log(socket.username+' est éliminé');
+      nextTurn(socket.username);
     }
   });
 
